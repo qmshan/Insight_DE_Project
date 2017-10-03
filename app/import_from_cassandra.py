@@ -114,5 +114,4 @@ while True:
 		for r in records:
 			f.write(r.action + ', ' + r.timestamp + ', ' + str(r.count) + ',\n')
 
-	print 'New update after 5s'
 	time.sleep(5)
