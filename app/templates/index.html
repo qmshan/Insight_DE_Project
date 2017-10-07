@@ -5,23 +5,20 @@
 		The Listener in Action
 		
 	</title>
-
+	 <meta http-equiv="refresh" content="10" />
 
 	<!--<script src="https://d3js.org/d3.v4.min.js"></script>-->
 	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-	<script type="text/javascript" src="{{ url_for('static', filename='js/plot.js') }}"></script>
-	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-	<script language="javascript" type="text/javascript">
-
-		var timeout = setInterval(reloadChat, 5000);    
-		function reloadChat () {$('#links').load('test.php');}
-</script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/plot.js') }}" ></script>
 </head>
 
 <body>
         <div id="membership"></div>
+	<script type="text/javascript">
+            	function load()
+                {setTimeout("window.open(self.location, '_self');", 10000);}
+        </script>
 </body>
-
 </body>
 
 </html>

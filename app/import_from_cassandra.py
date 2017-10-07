@@ -80,7 +80,7 @@ while True:
         """             
         update upgrade
         """
-	stmt = "select * from real_time  where action='Upgrade' order by timestamp desc limit 1440"
+	stmt = "select * from real_time  where action='Upgrade' order by timestamp desc limit 100"
 	
 	records = cassandra_session.execute(stmt)#, parameters=[real_time, Upgrade])
 	
@@ -92,7 +92,7 @@ while True:
 	"""		
 	update downgrade
 	"""
-	stmt = "select * from real_time  where action='Downgrade' order by timestamp desc limit 1440"
+	stmt = "select * from real_time  where action='Downgrade' order by timestamp desc limit 100"
 	records = cassandra_session.execute(stmt)#, parameters=[real_time, Upgrade])
 	
 	with open('static/results/downgrade.csv', 'w') as f:
@@ -105,7 +105,7 @@ while True:
         update user cancelling
         """
 
-	stmt = "select * from real_time  where action='Cancel' order by timestamp desc limit 1440"
+	stmt = "select * from real_time  where action='Cancel' order by timestamp desc limit 100"
 	
 	records = cassandra_session.execute(stmt)
 	
@@ -113,5 +113,18 @@ while True:
 		f.write('action,time,count, \n')
 		for r in records:
 			f.write(r.action + ', ' + r.timestamp + ', ' + str(r.count) + ',\n')
+
+        """             
+        update New user Registration
+        """
+        stmt = "select * from real_time  where action='Register' order by timestamp desc limit 100"
+        records = cassandra_session.execute(stmt)#, parameters=[real_time, Upgrade])
+
+        with open('static/results/newuser.csv', 'w') as f:
+                f.write('action,time,count,\n')
+                for r in records:
+                        f.write(r.action + ', ' + r.timestamp + ', ' + str(r.count) + ',\n')
+
+
 
 	time.sleep(5)

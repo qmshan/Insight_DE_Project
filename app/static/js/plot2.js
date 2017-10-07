@@ -30,7 +30,7 @@ Plotly.d3.csv("static/results/batch_cancel.csv", function(err, csvData3){
       var trace2 = {
         x: x2,
         y: y2,
-        name: 'Downgrade2',
+        name: 'Downgrade',
         type: 'bar',
 	marker: {color: 'rgb(94, 94, 125)'}
     };
