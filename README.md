@@ -9,7 +9,9 @@ This is the project I built as Insight Data Engineering fellow at the fall of 20
 Companies constantly make changes to their product or design experiments to understand users.  It would be helpful to implement a tool that can  extract user feedback so they can incorporate that information and improve next generation product. 
 Take Spotify for example, the app also play commercials when users are listening on the app.  I want to find out the relationship between advertisement rate and user reactions, which includes, membership upgrade, downgrade or cancellation. It is also very interesting to compare membership cancellation with new user registration. 
 
-#Pipeline:
+
+# Pipeline:
+<img src="img/pipeline.png" width="800">
 I simulated my input data in son format, and the data schema is very similar to real Spotify Data. I also used user_ID to label the group, in other words, I am testing different advertisement rate as my input on different groups of users. 
 
 Kafka is used for ingestion.  
@@ -21,3 +23,6 @@ Another branch of the pipeline is realtime processing using Spark Streaming, to 
 Results from batch processing and realtime processing were stored in Cassandra.
 
 WebUI is built using Flask.
+
+Slides
+
