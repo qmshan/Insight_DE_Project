@@ -24,5 +24,5 @@ Results from batch processing and realtime processing were stored in Cassandra.
 
 WebUI is built using Flask.
 
-Slides
 
+[Slides link](shanshanqin.com/slides)
