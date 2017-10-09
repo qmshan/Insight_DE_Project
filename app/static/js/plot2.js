@@ -3,7 +3,7 @@
 
 Plotly.d3.csv("static/results/batch_upgrade.csv", function(err, csvData1){
 Plotly.d3.csv("static/results/batch_downgrade.csv", function(err, csvData2){
-Plotly.d3.csv("static/results/batch_cancel.csv", function(err, csvData3){
+//Plotly.d3.csv("static/results/batch_cancel.csv", function(err, csvData3){
   var xvalue = ['Group 1', 'Group2', 'Group3', 'Group4']
   var x1 = [], y1 = [];
   for (var i=0; i<csvData1.length; i++) {
@@ -15,9 +15,9 @@ Plotly.d3.csv("static/results/batch_cancel.csv", function(err, csvData3){
       var trace1 = {
         x: x1, 
 	y: y1,
-        name: 'Upgrade',
+        name: 'Downgrade',
         type: 'bar',
-	marker: {color: 'rgb(178,204,235)'}        
+	marker: {color: 'rgb(94, 94, 125)'}        
     };
 
   var x2 = [], y2 = [];
@@ -30,39 +30,39 @@ Plotly.d3.csv("static/results/batch_cancel.csv", function(err, csvData3){
       var trace2 = {
         x: x2,
         y: y2,
-        name: 'Downgrade',
+        name: 'Upgrade',
         type: 'bar',
-	marker: {color: 'rgb(94, 94, 125)'}
+	marker: {color: 'rgb(178,204,235)'}
     };
 
-  var x3 = [], y3 = [];
-  for (var i=0; i<csvData3.length; i++) {
-      row3 = csvData3[i];
-      x3.push( xvalue[i] );
-      y3.push( row3['count'] );
-      }
+//  var x3 = [], y3 = [];
+//  for (var i=0; i<csvData3.length; i++) {
+//      row3 = csvData3[i];
+//      x3.push( xvalue[i] );
+//      y3.push( row3['count'] );
+//      }
 
-      var trace3 = {
-        x: x3,
-        y: y3,
-        name: 'Cancellation',
-        type: 'bar',
-	marker: {color: 'rgb(246,162,188)' }
-    };
+//      var trace3 = {
+//        x: x3,
+//        y: y3,
+//        name: 'Cancellation',
+//        type: 'bar',
+//	marker: {color: 'rgb(246,162,188)' }
+//    };
 
-var data = [trace1,trace2, trace3];
+var data = [trace2,trace1];
 
 var layout = {
   barmode: 'group',
-  autosize: false,
-  width: 600,
+  autosize: true,
+  width: 800,
   height: 400,
-  title: 'Membership Upgrade, Downgrade and Cancellation'
+  title: 'Membership Upgrade and Downgrade'
 };
 Plotly.newPlot('batch_upgrade_downgrade', data, layout);
 })
 })
-})
+//})
 
 // dashboard2:  User like&dislike events
 Plotly.d3.csv("static/results/batch_thumbsup.csv", function(err, csvData1){
@@ -78,12 +78,10 @@ Plotly.d3.csv("static/results/batch_thumbsdown.csv", function(err, csvData2){
       var trace1 = {
         x: x1, 
 	y: y1,
-        name: 'Likes',
+        name: 'New User',
         type: 'bar',
-	width: 0.25,
-        marker: {
-        color: 'rgb(178, 204, 235)'
-        }
+//	width: 0.25,
+        marker: {     color: 'rgb(178, 204, 235)' }
         
     };
 
@@ -97,22 +95,19 @@ Plotly.d3.csv("static/results/batch_thumbsdown.csv", function(err, csvData2){
       var trace2 = {
         x: x2,
         y: y2,
-        name: 'Dislikes',
+        name: 'Cancellation',
         type: 'bar',
-	width: 0.25,
-	marker: {
-	color: 'rgb(94, 94, 125)'
-	}
+	marker: {color: 'rgb(94, 94, 125)'}
     };
 
 var data = [trace1,trace2];
 
 var layout = {
   barmode: 'group',
-  autosize: false,
-  width: 600,
+  autosize: true,
+  width: 800,
   height: 400,
-  title: 'Like and Dislike'
+  title: 'New User and Membership Cancellation'
 };
 Plotly.newPlot('batch_like_dislike', data, layout);
 })
