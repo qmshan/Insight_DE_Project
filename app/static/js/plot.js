@@ -42,7 +42,7 @@ var data = [trace1, trace2];
 var layout = {
   autosize: false,
   width: 1000,
-  height: 450,
+  height: 700,
   margin: {
     l: 50,
     r: 50,
@@ -50,8 +50,8 @@ var layout = {
     t: 100,
     pad: 4
   },
-  yaxis: {range: [0,250]},
-  title: 'Membership Upgrade, Downgrade and Cancellation  Over Time',
+  yaxis: {autorange: true},
+  title: 'Membership Upgrade and Downgrade Over Time',
 };
 
   Plotly.newPlot('membership', data, layout);
@@ -102,7 +102,7 @@ var data = [trace1, trace2];
 var layout = {
   autosize: false,
   width: 1000,
-  height: 450,
+  height: 700,
   margin: {
     l: 50,
     r: 50,
@@ -110,7 +110,7 @@ var layout = {
     t: 100,
     pad: 4
   },
-  yaxis: {range: [0,40]},
+  yaxis: {autorange: true},
   title: 'New User and Membership Cancellation',
 };
 

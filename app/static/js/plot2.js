@@ -55,8 +55,8 @@ var data = [trace2,trace1];
 var layout = {
   barmode: 'group',
   autosize: true,
-  width: 800,
-  height: 400,
+  width: 1000,
+  height: 500,
   title: 'Membership Upgrade and Downgrade'
 };
 Plotly.newPlot('batch_upgrade_downgrade', data, layout);
@@ -105,8 +105,8 @@ var data = [trace1,trace2];
 var layout = {
   barmode: 'group',
   autosize: true,
-  width: 800,
-  height: 400,
+  width: 1000,
+  height: 600,
   title: 'New User and Membership Cancellation'
 };
 Plotly.newPlot('batch_like_dislike', data, layout);

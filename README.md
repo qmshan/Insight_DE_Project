@@ -29,4 +29,4 @@ WebUI is built using Flask.
 
 [Demo](http://www.shanshanqin.com)
 
-[Video](https://www.youtube.com/)
+[Video](https://youtu.be/9I_wYYNkpFA)
